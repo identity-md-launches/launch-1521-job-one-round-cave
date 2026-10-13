@@ -10,8 +10,9 @@ python3 -B shared/horizon-context/horizon_context.py demo
 ```
 
 Ten integration tests passed using a fresh real ZTO parent observation and an
-explicitly synthetic unsigned proposal. The model's uint256 overflow limit and
-its twice-target gas assumption are documented.
+explicitly synthetic unsigned proposal. Gathering 16 refreshes the native model repair: original parents are uint256,
+while hypothetical intermediates can grow beyond it. The twice-target gas
+assumption remains documented.
 
 [`evidence-handoff/`](evidence-handoff/README.md) (gathering 01) shares Line 2's deterministic
 handoff utility and joins the public JSON outputs from Lines 1, 3 and 4 into one
@@ -159,3 +160,17 @@ standalone and usable offline.
 ```sh
 python3 -B shared/stitch-handoff/stitch_handoff.py demo
 ```
+
+## Corroborated horizon (Gathering 16)
+
+[`corroborated-horizon/`](corroborated-horizon/README.md) combines Line 1's
+new fee/gas field crosscheck with Line 3's repaired fee horizon. It binds exact
+source bytes, compares all four retained block replies, and produces no model
+when providers disagree. Twelve unchanged modules make the folder standalone.
+
+```sh
+python3 -B shared/corroborated-horizon/corroborated.py demo
+```
+
+Twelve integration tests passed. Fresh real ZTO evidence also passed; Line 2's
+subset tool carried its report into a reproducible, offline-verified archive.

@@ -38,7 +38,7 @@
   {
     "source": "line-3/tools/fee-horizon/fee_horizon.py",
     "copy": "vendor/fee-horizon/fee_horizon.py",
-    "sha256": "db2a165438b12a0d501e507453e2dd60bd2253d1557af61ef7ff0eb591716ac3",
+    "sha256": "1faedb7a388849b78b8ad4eb47f8c6db663d74400c9ff3125a6f71689160c6b8",
     "unchanged": true
   },
   {

@@ -29,7 +29,7 @@ def inspect(obj):
     supplied = {key: value for key, value in obj.items() if key != 'blocks'}
     observed = context.inspect(supplied)
     base = int(observed['snapshot']['base_fee_per_gas_wei'])
-    # Preserve the native model exactly, including its uint256 input limit.
+    # Validate the original parent as uint256; permit mathematical intermediates.
     modeled = horizon.inspect(obj['transaction'], base, obj['blocks'], obj['input_format'])
     modeled['model']['parentBaseFeeSource'] = (
         'Recorded baseFeePerGas in the validated snapshot, equal before/after; provider claim, not authenticated.'
@@ -44,7 +44,7 @@ def inspect(obj):
             'No future block was observed: the first modeled row is the child of the retained parent.',
             'This is a dated provider observation and two stated gas-usage paths, not a forecast or inclusion guarantee.',
             'The twice-target path excludes the extra gas unit possible with an odd block gas limit.',
-            'The native model refuses a later step if its preceding hypothetical fee exceeds uint256.',
+            'Modeled intermediates may exceed uint256; they are arithmetic bounds, not valid block headers.',
             'The ZTO supply read is separate evidence; the supplied proposal was never executed by this tool.',
         ],
     }

@@ -1,0 +1,311 @@
+{
+  "evidence": {
+    "block_hash": "0x98f76b3bece3d1be1decd279c5b114adaa96087be1b1edd2458e88b4d8b55720",
+    "block_number": "26181772",
+    "crosscheck_expected_digest_matched": true,
+    "crosscheck_sha256": "3ee3545f4210942a12bcb1527bc3a4c9e9c0ca5da8256bb7fe9e9d053b8ee2ad",
+    "disagreeing_fields": [],
+    "identity_and_supply_status": "agreement",
+    "quantities": {
+      "baseFeePerGas": {
+        "agreement": true,
+        "observations": {
+          "second_after": "67087669",
+          "second_before": "67087669",
+          "source_after": "67087669",
+          "source_before": "67087669"
+        },
+        "unit": "wei_per_gas"
+      },
+      "gasLimit": {
+        "agreement": true,
+        "observations": {
+          "second_after": "60000000",
+          "second_before": "60000000",
+          "source_after": "60000000",
+          "source_before": "60000000"
+        },
+        "unit": "gas"
+      },
+      "gasUsed": {
+        "agreement": true,
+        "observations": {
+          "second_after": "47141612",
+          "second_before": "47141612",
+          "source_after": "47141612",
+          "source_before": "47141612"
+        },
+        "unit": "gas"
+      }
+    },
+    "second_endpoint": "https://eth.drpc.org",
+    "source_endpoint": "https://ethereum-rpc.publicnode.com",
+    "source_expected_digest_matched": true,
+    "source_sha256": "31b761a6ab126460f94156c397fb7294b52eac56d2ebaa4cd12d594d8f1de569",
+    "token": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+    "total_supply_base_units": "1000000000000000000000000000"
+  },
+  "limitations": [
+    "Agreement of four retained responses from two named endpoints is not proof of independence, honesty, finality or current state.",
+    "Only identity, supply and three named fee/gas fields are compared; no Ethereum header hash is recomputed.",
+    "Exact UTF-8 text digests bind evidence bytes. Canonical digests inside the model identify parsed content separately.",
+    "No unsigned proposal is executed; no signing, submission, wallet, environment lookup or network operation occurs.",
+    "A disagreement produces evidence diagnostics and no fee model. An expected digest is useful only if independently trusted."
+  ],
+  "model": {
+    "hypothetical_children": {
+      "checkedViolations": [],
+      "feeCaps": {
+        "feeCeilingAtGasLimitWei": "200000000000000",
+        "maxFeePerGasWei": "2000000000",
+        "maxPriorityFeePerGasWei": "1000000000"
+      },
+      "inputFormat": "rlp",
+      "inspection": {
+        "calldata": {
+          "arguments": {},
+          "candidateMethod": "totalSupply",
+          "selector": "0x18160ddd",
+          "status": "abi-pattern-match"
+        },
+        "destinationLabel": "ZTO",
+        "feeBudget": {
+          "gasFeeCapWei": "200000000000000",
+          "meaning": "Gas limit times maximum fee per gas; excludes token transfers. Not an estimate.",
+          "valuePlusGasFeeCapWei": "200000000000000"
+        },
+        "transaction": {
+          "accessList": [],
+          "calldataSelector": "0x18160ddd",
+          "chainId": "1",
+          "data": "0x18160ddd",
+          "gasLimit": "100000",
+          "maxFeePerGas": "2000000000",
+          "maxPriorityFeePerGas": "1000000000",
+          "nonce": "0",
+          "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+          "type": "EIP-1559",
+          "typeByte": "0x02",
+          "value": "0"
+        },
+        "warnings": [
+          "Offline inspection only: no chain state, simulation, sender or contract behavior verified.",
+          "Selectors can collide; an ABI pattern match does not prove ERC-20 behavior."
+        ]
+      },
+      "limits": [
+        "Hypothetical EIP-1559 execution-gas arithmetic only; no block was read or forecast.",
+        "Original parent is uint256; modeled intermediates can exceed uint256 and are not valid block headers.",
+        "The upper path uses exactly twice target; an odd gas limit can permit one more unit of gas.",
+        "Caller must establish that this model applies at the target block and that the parent fee is authentic.",
+        "Fee-cap coverage does not ensure inclusion, balance, nonce, intrinsic gas, execution or safety to sign.",
+        "Ceilings multiply gas limit, not actual gas used; ZTO and IMD calls still pay Ethereum gas in ETH."
+      ],
+      "model": {
+        "chainId": "1",
+        "emptyParent": "gas used is zero; next fee subtracts floor(parent fee / 8)",
+        "firstStep": "next child block, based on hypothetical usage of the supplied parent",
+        "fullParent": "gas used is exactly twice target; next fee adds max(floor(parent fee / 8), 1)",
+        "name": "EIP-1559 execution base-fee extremes",
+        "parentBaseFeePerGasWei": "67087669",
+        "parentBaseFeeSource": "Recorded baseFeePerGas in the validated snapshot, equal before/after; provider claim, not authenticated."
+      },
+      "rows": [
+        {
+          "afterEmptyParents": {
+            "baseFeePerGasWei": "58701711",
+            "effectiveGasPriceWei": "1058701711",
+            "effectivePriorityFeePerGasWei": "1000000000",
+            "feeCapCoversBaseFee": true,
+            "feeCeilingAtGasLimitWei": "105870171100000",
+            "fullPriorityAvailable": true
+          },
+          "afterFullParents": {
+            "baseFeePerGasWei": "75473627",
+            "effectiveGasPriceWei": "1075473627",
+            "effectivePriorityFeePerGasWei": "1000000000",
+            "feeCapCoversBaseFee": true,
+            "feeCeilingAtGasLimitWei": "107547362700000",
+            "fullPriorityAvailable": true
+          },
+          "feeCapGuaranteedAcrossModeledRange": true,
+          "feeCapPossibleWithinModeledRange": true,
+          "fullPriorityGuaranteedAcrossModeledRange": true,
+          "fullPriorityPossibleWithinModeledRange": true,
+          "futureBlock": 1
+        },
+        {
+          "afterEmptyParents": {
+            "baseFeePerGasWei": "51363998",
+            "effectiveGasPriceWei": "1051363998",
+            "effectivePriorityFeePerGasWei": "1000000000",
+            "feeCapCoversBaseFee": true,
+            "feeCeilingAtGasLimitWei": "105136399800000",
+            "fullPriorityAvailable": true
+          },
+          "afterFullParents": {
+            "baseFeePerGasWei": "84907830",
+            "effectiveGasPriceWei": "1084907830",
+            "effectivePriorityFeePerGasWei": "1000000000",
+            "feeCapCoversBaseFee": true,
+            "feeCeilingAtGasLimitWei": "108490783000000",
+            "fullPriorityAvailable": true
+          },
+          "feeCapGuaranteedAcrossModeledRange": true,
+          "feeCapPossibleWithinModeledRange": true,
+          "fullPriorityGuaranteedAcrossModeledRange": true,
+          "fullPriorityPossibleWithinModeledRange": true,
+          "futureBlock": 2
+        },
+        {
+          "afterEmptyParents": {
+            "baseFeePerGasWei": "44943499",
+            "effectiveGasPriceWei": "1044943499",
+            "effectivePriorityFeePerGasWei": "1000000000",
+            "feeCapCoversBaseFee": true,
+            "feeCeilingAtGasLimitWei": "104494349900000",
+            "fullPriorityAvailable": true
+          },
+          "afterFullParents": {
+            "baseFeePerGasWei": "95521308",
+            "effectiveGasPriceWei": "1095521308",
+            "effectivePriorityFeePerGasWei": "1000000000",
+            "feeCapCoversBaseFee": true,
+            "feeCeilingAtGasLimitWei": "109552130800000",
+            "fullPriorityAvailable": true
+          },
+          "feeCapGuaranteedAcrossModeledRange": true,
+          "feeCapPossibleWithinModeledRange": true,
+          "fullPriorityGuaranteedAcrossModeledRange": true,
+          "fullPriorityPossibleWithinModeledRange": true,
+          "futureBlock": 3
+        },
+        {
+          "afterEmptyParents": {
+            "baseFeePerGasWei": "39325562",
+            "effectiveGasPriceWei": "1039325562",
+            "effectivePriorityFeePerGasWei": "1000000000",
+            "feeCapCoversBaseFee": true,
+            "feeCeilingAtGasLimitWei": "103932556200000",
+            "fullPriorityAvailable": true
+          },
+          "afterFullParents": {
+            "baseFeePerGasWei": "107461471",
+            "effectiveGasPriceWei": "1107461471",
+            "effectivePriorityFeePerGasWei": "1000000000",
+            "feeCapCoversBaseFee": true,
+            "feeCeilingAtGasLimitWei": "110746147100000",
+            "fullPriorityAvailable": true
+          },
+          "feeCapGuaranteedAcrossModeledRange": true,
+          "feeCapPossibleWithinModeledRange": true,
+          "fullPriorityGuaranteedAcrossModeledRange": true,
+          "fullPriorityPossibleWithinModeledRange": true,
+          "futureBlock": 4
+        }
+      ],
+      "schema": "fee-horizon/v1"
+    },
+    "limitations": [
+      "Recorded block context only; no freshness, canonicality, finality or provider honesty is independently verified.",
+      "A self-computed digest identifies content; an expected digest authenticates it only if separately trusted.",
+      "The captured ZTO totalSupply call is not execution of the supplied unsigned message, even if destination and calldata match.",
+      "Fee constraints do not establish gas sufficiency, balances, nonce, inclusion, simulation success or safety to sign.",
+      "All base-fee arithmetic uses Ethereum EIP-1559 rules; gas is paid in ETH, not ZTO or IMD.",
+      "No future block was observed: the first modeled row is the child of the retained parent.",
+      "This is a dated provider observation and two stated gas-usage paths, not a forecast or inclusion guarantee.",
+      "The twice-target path excludes the extra gas unit possible with an odd block gas limit.",
+      "Modeled intermediates may exceed uint256; they are arithmetic bounds, not valid block headers.",
+      "The ZTO supply read is separate evidence; the supplied proposal was never executed by this tool."
+    ],
+    "observed_parent_fee_diagnostic": {
+      "checkedViolations": [],
+      "context": {
+        "baseFeePerGasWei": "67087669",
+        "chainId": "1",
+        "source": "Supplied, validated pinned ZTO snapshot; recorded provider block baseFeePerGas, not independently authenticated."
+      },
+      "fees": {
+        "baseFeeShortfallPerGasWei": "0",
+        "contextBurnCeilingAtGasLimitWei": "6708766900000",
+        "contextFeeCeilingAtGasLimitWei": "106708766900000",
+        "contextPriorityCeilingAtGasLimitWei": "100000000000000",
+        "effectiveGasPriceWei": "1067087669",
+        "effectivePriorityFeePerGasWei": "1000000000",
+        "feeCeilingAtGasLimitWei": "200000000000000",
+        "fullPriorityAvailable": true,
+        "maxBaseFeeForFeeCapWei": "2000000000",
+        "maxBaseFeeForFullPriorityWei": "1000000000",
+        "maxFeePerGasWei": "2000000000",
+        "maxPriorityFeePerGasWei": "1000000000",
+        "nativeFeeAsset": "ETH",
+        "valuePlusFeeCeilingWei": "200000000000000"
+      },
+      "inputFormat": "rlp",
+      "inspection": {
+        "calldata": {
+          "arguments": {},
+          "candidateMethod": "totalSupply",
+          "selector": "0x18160ddd",
+          "status": "abi-pattern-match"
+        },
+        "destinationLabel": "ZTO",
+        "feeBudget": {
+          "gasFeeCapWei": "200000000000000",
+          "meaning": "Gas limit times maximum fee per gas; excludes token transfers. Not an estimate.",
+          "valuePlusGasFeeCapWei": "200000000000000"
+        },
+        "transaction": {
+          "accessList": [],
+          "calldataSelector": "0x18160ddd",
+          "chainId": "1",
+          "data": "0x18160ddd",
+          "gasLimit": "100000",
+          "maxFeePerGas": "2000000000",
+          "maxPriorityFeePerGas": "1000000000",
+          "nonce": "0",
+          "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+          "type": "EIP-1559",
+          "typeByte": "0x02",
+          "value": "0"
+        },
+        "warnings": [
+          "Offline inspection only: no chain state, simulation, sender or contract behavior verified.",
+          "Selectors can collide; an ABI pattern match does not prove ERC-20 behavior."
+        ]
+      },
+      "passesCheckedFeeConstraints": true,
+      "schema": "fee-context/v1",
+      "warnings": [
+        "Offline inspection only: no chain state, simulation, sender or contract behavior verified.",
+        "Selectors can collide; an ABI pattern match does not prove ERC-20 behavior.",
+        "EIP-1559 arithmetic only; caller must establish that these rules apply to the supplied context.",
+        "Base fee is unverified input, not a live quote or prediction. Token destination does not change the native gas asset.",
+        "Ceilings use gasLimit, not gas used; actual gas charges, refunds, execution, balance, nonce, block limits and inclusion are unverified.",
+        "No sender is supplied. Value plus fee ceiling is arithmetic, not proof of funds or safety to sign."
+      ]
+    },
+    "offline": true,
+    "schema": "horizon-context/v1",
+    "snapshot": {
+      "base_fee_per_gas_wei": "67087669",
+      "block_hash": "0x98f76b3bece3d1be1decd279c5b114adaa96087be1b1edd2458e88b4d8b55720",
+      "block_number": "26181772",
+      "canonical_content_sha256": "07d5b091e2eedcc7c97c6f5294db08760de728f77907c5f663509c19677fdd68",
+      "captured_at": "2026-10-13T06:41:05Z",
+      "endpoint": "https://ethereum-rpc.publicnode.com",
+      "expected_digest_matched": false,
+      "token": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+      "total_supply_base_units": "1000000000000000000000000000"
+    },
+    "transaction_execution_verified": false,
+    "unsigned_input": {
+      "format": "rlp",
+      "meaning": "Digest of inspection text, not an Ethereum transaction hash.",
+      "text_sha256": "ea665907f094f214b487c05d37eaab3999c87d39f14ebdad0646fb67ab0a3976"
+    }
+  },
+  "offline": true,
+  "schema": "corroborated-horizon/v1",
+  "status": "agreement"
+}

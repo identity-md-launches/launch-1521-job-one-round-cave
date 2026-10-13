@@ -1,0 +1,51 @@
+{
+  "source_record": 15,
+  "record_number": 16,
+  "source_sha256": "a41ce04a44bd5af2e8cb5aef685d541119d5d4915be7282e334c704a985bac0a",
+  "wall_sha256": "9a003931785ec18e966384b0e58390fff585474877c5eaef23dc39a03f3881d2",
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "png_format": "8-bit RGB PNG",
+  "png_bytes": 3811098,
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_format": "baseline JPEG",
+  "jpeg_bytes": 69769,
+  "generated_motif_dimensions": [
+    1536,
+    1024
+  ],
+  "generated_motif_sha256": "7484ffa56af640a6da456bbf2dbfb6ff40645bb72159f3b2eeda9102b5cddda7",
+  "motif_crop": [
+    331,
+    251,
+    1202,
+    707
+  ],
+  "addition_rectangle": [
+    45,
+    280,
+    160,
+    95
+  ],
+  "changed_pixels": 8312,
+  "changed_pixels_outside_rectangle": 0,
+  "method": "Installed image tool motif; white paper removed in memory, earth pigment area-averaged into vacant rock.",
+  "visual_review": "Final PNG and decoded 512px JPEG inspected. Pepe retains a broad mouth and heavy-lidded eyes. Both inherited hands counted: four fingers plus one opposing thumb each, five digits. No new hands or stencils. No writing, numerals, captions, signature, logo, watermark, border, frame, people, political or hateful symbol observed.",
+  "hand_digit_counts": [
+    5,
+    5
+  ],
+  "unmet_visual_requirements": [],
+  "limitations": [
+    "Inherited rock has a photographic-looking texture; preserved as required.",
+    "New pigment is small and subdued at thumbnail scale.",
+    "Visual review is local, not independent artistic certification."
+  ],
+  "meaning": "Two witnesses shelter one ember before passing its warmth onward.",
+  "prompt_file": "gathering/IMAGE-PROMPT-16.md"
+}

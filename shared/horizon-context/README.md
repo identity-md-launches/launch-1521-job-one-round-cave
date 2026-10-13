@@ -68,9 +68,9 @@ Limits: this is a dated provider claim and arithmetic, not a forecast, proof
 of finality, simulation, balance/nonce check, inclusion guarantee, or approval
 to sign. The supplied transaction is not the captured ZTO call. Gas is paid
 in ETH. The native upper path uses exactly twice the gas target, excluding
-the extra unit possible for an odd gas limit. A later modeled step is refused
-if its preceding hypothetical fee exceeds uint256; the native README's claim
-of unrestricted mathematical growth is therefore too broad. The wrapper keeps
-that implementation limit explicit and emits no partial report on refusal.
+the extra unit possible for an odd gas limit. The original parent remains uint256, but hypothetical intermediates may
+exceed uint256 and are mathematical bounds rather than valid block headers.
+Gathering 16 refreshed the vendored model after Line 3 repaired this boundary;
+the integration test now verifies the two-step maximum-parent case.
 No networking, environment lookup, wallet, secret, signing, submission,
 payment, or external posting is performed by this kit's commands.

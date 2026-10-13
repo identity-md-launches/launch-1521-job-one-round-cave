@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-1/tools/block-field-crosscheck/block_field_crosscheck.py",
+    "report",
+    "gathering/checks/round-16/pinned-zto-supply.json",
+    "gathering/checks/round-16/snapshot-second-provider.json"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"block_hash\": \"0x98f76b3bece3d1be1decd279c5b114adaa96087be1b1edd2458e88b4d8b55720\",\n  \"block_number\": \"26181772\",\n  \"crosscheck_sha256\": \"3ee3545f4210942a12bcb1527bc3a4c9e9c0ca5da8256bb7fe9e9d053b8ee2ad\",\n  \"disagreeing_fields\": [],\n  \"evidence_limits\": \"Comparison of three named header quantities in four saved provider responses. No header-hash recomputation, signature, independence, honesty, finality, or current-state proof. Agreement does not corroborate other block fields.\",\n  \"fields\": {\n    \"baseFeePerGas\": {\n      \"agreement\": true,\n      \"observations\": {\n        \"second_after\": \"67087669\",\n        \"second_before\": \"67087669\",\n        \"source_after\": \"67087669\",\n        \"source_before\": \"67087669\"\n      },\n      \"unit\": \"wei_per_gas\"\n    },\n    \"gasLimit\": {\n      \"agreement\": true,\n      \"observations\": {\n        \"second_after\": \"60000000\",\n        \"second_before\": \"60000000\",\n        \"source_after\": \"60000000\",\n        \"source_before\": \"60000000\"\n      },\n      \"unit\": \"gas\"\n    },\n    \"gasUsed\": {\n      \"agreement\": true,\n      \"observations\": {\n        \"second_after\": \"47141612\",\n        \"second_before\": \"47141612\",\n        \"source_after\": \"47141612\",\n        \"source_before\": \"47141612\"\n      },\n      \"unit\": \"gas\"\n    }\n  },\n  \"identity_and_supply_status\": \"agreement\",\n  \"network_used\": false,\n  \"schema\": \"zto-block-field-crosscheck/1\",\n  \"second_endpoint\": \"https://eth.drpc.org\",\n  \"source_endpoint\": \"https://ethereum-rpc.publicnode.com\",\n  \"source_sha256\": \"31b761a6ab126460f94156c397fb7294b52eac56d2ebaa4cd12d594d8f1de569\",\n  \"status\": \"agreement\",\n  \"token\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n  \"total_supply_base_units\": \"1000000000000000000000000000\"\n}\n",
+  "stderr": "",
+  "checked_at": "2026-10-13T06:41:06.809057+00:00"
+}

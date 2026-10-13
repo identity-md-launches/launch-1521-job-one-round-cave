@@ -1,0 +1,23 @@
+{
+  "format": "handoff-subset-v1",
+  "verified": true,
+  "source_archive_sha256": "ab6533f25b28e45c310efaa1d49abf03535ba8236507f6a761f93cd9a38b7467",
+  "source_archive_bytes": 16185,
+  "source_file_count": 2,
+  "source_trusted_digest_matched": true,
+  "subset_archive_sha256": "24bb80acef31a15cb5f2b2bc7e235d14ede966390d1aaa28263809ed4f260e62",
+  "subset_archive_bytes": 14263,
+  "file_count": 1,
+  "payload_bytes": 13885,
+  "selected_files": [
+    {
+      "bytes": 13885,
+      "path": "report.json",
+      "sha256": "634623a8ddcef40c26e7e3f9d91bf08a1a5a6b6064d98e3505a78fc13823d6c0"
+    }
+  ],
+  "omitted_paths": [
+    "fields.json"
+  ],
+  "note": "All source payloads were verified, including omitted files. Selection uses exact paths, without renaming or dependency inference. The new ZIP has its own manifest and digest. This receipt does not authenticate a sender or prove that a subset is runnable or safe."
+}

@@ -78,8 +78,8 @@ class HorizonContextTests(unittest.TestCase):
         self.obj['blocks'] = 2
         for key in ('block', 'block_after'):
             self.obj['snapshot'][key]['baseFeePerGas'] = hex(2**256 - 1)
-        # Document rather than silently repair the native model's overflow limit.
-        with self.assertRaises(ValueError): tool.inspect(self.obj)
+        # The repaired native model permits mathematical intermediates.
+        self.assertGreater(int(tool.inspect(self.obj)["hypothetical_children"]["rows"][1]["afterFullParents"]["baseFeePerGasWei"]), 2**256-1)
 
     def test_priority_violation_retains_diagnostic_and_exit_one(self):
         tx = tool.horizon.fee_context.reader.demo_object()

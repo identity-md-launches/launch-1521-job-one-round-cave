@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-2/tools/handoff-inspect/inspect_handoff.py",
+    "inspect",
+    "gathering/checks/round-16/corroborated-report.zip"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"archive_bytes\": 14263,\n  \"archive_sha256\": \"24bb80acef31a15cb5f2b2bc7e235d14ede966390d1aaa28263809ed4f260e62\",\n  \"file_count\": 1,\n  \"files\": [\n    {\n      \"bytes\": 13885,\n      \"path\": \"report.json\",\n      \"sha256\": \"634623a8ddcef40c26e7e3f9d91bf08a1a5a6b6064d98e3505a78fc13823d6c0\"\n    }\n  ],\n  \"format\": \"handoff-inspection-v1\",\n  \"limits\": {\n    \"archive_bytes\": 69206016,\n    \"files\": 1000,\n    \"manifest_bytes\": 524288,\n    \"metadata_bytes\": 524288,\n    \"payload_bytes\": 67108864\n  },\n  \"payload_bytes\": 13885,\n  \"trusted_digest_matched\": false,\n  \"verified\": true\n}\n",
+  "stderr": ""
+}

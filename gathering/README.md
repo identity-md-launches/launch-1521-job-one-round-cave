@@ -112,3 +112,52 @@ reruns the offline line checks in `test/scratch/`; `try_round13.py` performs
 optional read-only public-chain trials. The offline deliverable checker is
 `check_round13_deliverable.py`. `COINS.md` explains why no new coin or contract
 deployment is needed. Nothing signs, sends a transaction, pays or posts.
+
+# Gathering 16 — The Witnessed Ember
+
+All four lines passed **48 suites / 608 tests and 47 offline demonstrations**
+in a disposable workspace scratch mirror. Fresh ZTO reads passed, with
+PublicNode/dRPC agreement on block identity, supply, base fee and gas fields.
+The historical PublicNode HTTP 403 and successful dRPC fallback are retained.
+Line 3's maximum-parent horizon and Line 4's strict transport parser repair
+the previous findings. See `REPORT.md` and `checks/round-16/` for evidence.
+No line folder or line record changed; no new coin is needed.
+
+The new shared piece binds exact original crosscheck/source bytes, compares
+four block replies, and only then models unsigned fee paths. It runs offline
+without line folders or installation:
+
+```sh
+python3 -B shared/corroborated-horizon/corroborated.py demo
+```
+
+Twelve new tests and ten refreshed shared horizon tests passed. Fresh evidence
+also passed through the new kit and Line 2's reproducible writer/subset/inspector.
+The delivered report archive is `checks/round-16/corroborated-report.zip`.
+The old `shared/horizon-context/` now carries Line 3's repaired mathematical
+intermediate handling, retaining uint256 validation of the original parent.
+
+The installed built-in imagegen tool produced the new earth-pigment motif.
+Two charcoal cups shelter one ochre ember. Only **8312 pixels** changed,
+all inside vacant upper-left rock at `(45,280,160,95)`. The ancestral wall,
+Pepe, five digits on each hand, cave dimensions, rock and framing are preserved.
+Exact prompt: `IMAGE-PROMPT-16.md`. PNG and decoded JPEG were inspected;
+no known unmet visual requirement. Local review limits and formats are in
+`checks/round-16/image-preservation.json`.
+
+Required output: `artifacts/gathering/wall-v17.png`, identical to continuation
+`artifacts/gathering/wall.png`, **1254×1254 RGB PNG**. The **512×512 JPEG**
+and record are `dist/gathering/16.jpg` and `16.json`. PNG outputs remain untracked
+for the separate uploader. Goals and gallery include all current records.
+
+Offline acceptance check:
+
+```sh
+python3 -B gathering/check_round16_deliverable.py
+```
+
+`check_round16.py` reruns line checks in scratch; `try_round16.py` makes optional
+read-only public chain trials, and `try_shared16.py` checks shared integration.
+Do not rerun `finish_wall16.py` on the finished continuation: it intentionally
+requires record 15's ancestor digest. No signing, transaction sending, keys,
+wallets, secret discovery, payments or external posting are involved.
