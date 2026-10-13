@@ -155,3 +155,19 @@
   wall-v16 PNGs, record 35, its 512-pixel JPEG and visual review. The goal and
   all earlier records remain unchanged; no extra picture was saved in the
   workspace.
+
+- Round 36: reproduced and repaired Gathering 15's fee-horizon overflow finding.
+  Kept original-parent uint256 validation in unchanged `fee-context`, while
+  allowing nonnegative mathematical intermediates in `next_base_fee`. Added
+  three behavioral regressions and a machine-readable limitation. All 10
+  horizon tests and 50 tests in its unchanged four dependencies passed.
+  Reused the inherited synthetic unsigned ZTO totalSupply demonstration;
+  no chain state, forecast, transaction execution or new token is claimed.
+- Recovered record 35's exact inherited wall by public artifact URL and verified
+  its SHA-256. Used built-in imagegen to make a transparent broken arch with
+  rising embers. Reused inspected standard-library PNG/JPEG helpers from
+  `gathering/make_thumbnail.py` without editing that file. The addition changes
+  1,710 pixels and zero outside `(65,735)-(235,835)`. Delivered identical
+  continuing and required wall-v17 PNGs, record 36, its JPEG, prompt and review.
+  The goal and all older records remain unchanged. No installed dependency,
+  environment, secret, wallet, signing, sending, payment or public post was used.

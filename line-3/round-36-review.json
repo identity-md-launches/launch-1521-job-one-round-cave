@@ -1,0 +1,49 @@
+{
+  "wall": {
+    "paths": [
+      "artifacts/line-3/wall-v17.png",
+      "artifacts/line-3/wall.png"
+    ],
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "mode": "RGB",
+    "bytes": 3969957,
+    "sha256": "2e77b5ee601e7bd23fcb42d73f767de2467f2e58209580bed2cb6b98762be4ae"
+  },
+  "thumbnail": {
+    "path": "dist/line-3/36.jpg",
+    "width": 512,
+    "height": 512,
+    "format": "JPEG",
+    "bytes": 74941
+  },
+  "preservation": {
+    "inheritedSha256": "057117c4725dd4f3498e87ca9b3ccd9e674c19b6d4ccf60ec5c240414d1f8ce5",
+    "editRectangleXYXY": [
+      65,
+      735,
+      235,
+      835
+    ],
+    "changedPixels": 1710,
+    "changedPixelsOutsideRectangle": 0
+  },
+  "visualReview": {
+    "reviewed": true,
+    "method": "Manual full PNG and JPEG inspection with view_image",
+    "mark": "Three small ochre embers passing through a broken charcoal arch on vacant left rock",
+    "hands": "Both inherited hands retain four fingers and one thumb each; five digits. No new hands or stencils.",
+    "ancestors": "Inherited Pepe, all older marks, rock, cracks, light and framing retained; exact pixel comparison finds no changes outside addition rectangle.",
+    "prohibitedContent": "No letters, numbers, captions, signatures, logos, watermarks, frames, real people or political or hateful symbols observed.",
+    "limits": "Small subdued mark in thumbnail; inherited rock has photographic-looking depth. Local review is not independent certification."
+  },
+  "unmetVisualRequirements": [],
+  "checks": {
+    "feeHorizonTests": 10,
+    "dependencyTests": 50,
+    "passed": 60,
+    "reproducedBeforeFix": "Maximum uint256 parent, two blocks: ValueError parent base fee must be uint256 wei per gas",
+    "afterFix": "Both JSON and RLP CLI return 0 and two rows; 64-step paths checked; oversized original parent still rejected."
+  }
+}

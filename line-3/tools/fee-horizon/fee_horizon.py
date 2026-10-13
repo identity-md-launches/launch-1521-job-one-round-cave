@@ -14,9 +14,13 @@ MAX_BLOCKS = 64
 
 
 def next_base_fee(parent, full):
-    """EIP-1559 step for a full (2x target) or empty (0x target) parent."""
-    if type(parent) is not int or not 0 <= parent <= fee_context.UINT256_MAX:
-        raise ValueError("parent base fee must be uint256 wei per gas")
+    """Mathematical step, including hypothetical intermediates above uint256.
+
+    inspect() validates the original parent through fee_context before modeling.
+    This arithmetic helper deliberately does not impose a block-header bound.
+    """
+    if type(parent) is not int or parent < 0:
+        raise ValueError("modeled parent base fee must be a nonnegative integer")
     if type(full) is not bool:
         raise ValueError("full must be a boolean")
     return parent + max(parent // 8, 1) if full else parent - parent // 8
@@ -85,6 +89,7 @@ def inspect(text, parent_base_fee, blocks, input_format="rlp"):
         "inspection": context["inspection"],
         "limits": [
             "Hypothetical EIP-1559 execution-gas arithmetic only; no block was read or forecast.",
+            "Original parent is uint256; modeled intermediates can exceed uint256 and are not valid block headers.",
             "The upper path uses exactly twice target; an odd gas limit can permit one more unit of gas.",
             "Caller must establish that this model applies at the target block and that the parent fee is authentic.",
             "Fee-cap coverage does not ensure inclusion, balance, nonce, intrinsic gas, execution or safety to sign.",

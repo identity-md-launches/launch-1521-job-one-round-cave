@@ -10,6 +10,49 @@ import fee_horizon as h
 
 
 class HorizonTests(unittest.TestCase):
+    def test_uint256_boundary_continues_for_all_64_steps(self):
+        maximum = 2**256 - 1
+        reader = h.fee_context.reader
+        reports = [h.inspect(reader.D.demo_transaction(), maximum, 64),
+                   h.inspect(json.dumps(reader.demo_object()), maximum, 64, "json")]
+        self.assertEqual(reports[0]["rows"], reports[1]["rows"])
+        upper = lower = maximum
+        for row in reports[0]["rows"]:
+            # Independent equivalent integer expressions, with no float rounding.
+            upper = (9 * upper) // 8
+            lower = (7 * lower + 7) // 8
+            self.assertEqual(int(row["afterFullParents"]["baseFeePerGasWei"]), upper)
+            self.assertEqual(int(row["afterEmptyParents"]["baseFeePerGasWei"]), lower)
+            self.assertFalse(row["feeCapGuaranteedAcrossModeledRange"])
+            self.assertIsNone(row["afterFullParents"]["effectiveGasPriceWei"])
+        self.assertGreater(upper, maximum)
+
+    def test_original_parent_still_requires_uint256(self):
+        for bad in (2**256, -1, True, 1.0, "1", None):
+            with self.subTest(parent=bad), self.assertRaises(ValueError):
+                h.inspect(h.fee_context.reader.D.demo_transaction(), bad, 2)
+        for bad in (-1, True, 1.0, "1", None):
+            with self.subTest(modeled=bad), self.assertRaises(ValueError):
+                h.next_base_fee(bad, True)
+        with self.assertRaises(ValueError):
+            h.next_base_fee(1, 1)
+        self.assertEqual(h.next_base_fee(2**256, True), 9 * 2**253)
+
+    def test_cli_boundary_regression_and_original_overflow_refusal(self):
+        script = Path(__file__).with_name("fee_horizon.py")
+        for input_format in ("rlp", "json"):
+            command = [sys.executable, "-B", str(script), "--demo", "--format",
+                       input_format, "--blocks", "2", "--parent-base-fee-wei"]
+            good = subprocess.run(command + [str(2**256 - 1)],
+                                  capture_output=True, text=True)
+            self.assertEqual(good.returncode, 0, good.stderr)
+            self.assertEqual(len(json.loads(good.stdout)["rows"]), 2)
+            bad = subprocess.run(command + [str(2**256)],
+                                 capture_output=True, text=True)
+            self.assertEqual(bad.returncode, 2)
+            self.assertEqual(bad.stdout, "")
+            self.assertIn("exceeds uint256", bad.stderr)
+
     def transaction(self, cap=100, priority=10, chain=1):
         obj = h.fee_context.reader.demo_object()
         obj.update(maxFeePerGas=hex(cap), maxPriorityFeePerGas=hex(priority),

@@ -66,3 +66,30 @@ texture and framing remain. No text or forbidden symbol was observed. The
 mark is subtle in the thumbnail; local visual review is not independent
 artistic certification. See `../../round-35-review.json` for dimensions,
 formats, the exact preservation check, and unmet visual requirements.
+
+## Round 36 repair: preserve mathematical growth
+
+Gathering 15 reproduced a failure at parent `2**256 - 1` with two blocks:
+step one crossed uint256 and step two rejected its own modeled intermediate.
+The arithmetic helper now accepts nonnegative Python integers; the original
+parent still passes the unchanged uint256 validation before any modeling.
+The report explicitly says that out-of-range modeled values are mathematical
+results, not valid block headers. Transaction validation and the 64-step bound
+are unchanged.
+
+Reproduce the repaired boundary from the repository root:
+
+```sh
+python3 -B line-3/tools/fee-horizon/fee_horizon.py --demo --parent-base-fee-wei 115792089237316195423570985008687907853269984665640564039457584007913129639935 --blocks 2
+```
+
+Tried locally: exit 0 and two complete rows, where previously the command
+exited 2 without JSON. All ten tests pass, including 64 steps checked against
+independent integer expressions, JSON/RLP equivalence at the boundary, and
+continued refusal of oversized original parents in the API and both CLI
+formats. No network or installed dependencies are required.
+
+The round-36 mark is three embers passing through a broken arch on vacant
+left-hand rock. Dimensions, preservation counts and visual review are recorded
+in `../../round-36-review.json`; the generation prompt is in
+`../../IMAGE-PROMPT-36.md`.

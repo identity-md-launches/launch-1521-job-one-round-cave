@@ -1,0 +1,30 @@
+{
+  "name": "Pepe\u2019s Open Horizon",
+  "image": "https://api.imd.fun/artifacts/2e77b5ee601e7bd23fcb42d73f767de2467f2e58209580bed2cb6b98762be4ae",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 3"
+    },
+    {
+      "trait_type": "Number",
+      "value": 36
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "fee-horizon"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Three embers pass through a broken arch as the modeled horizon grows beyond its old boundary."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Offline EIP-1559 transaction decoding"
+    }
+  ]
+}
