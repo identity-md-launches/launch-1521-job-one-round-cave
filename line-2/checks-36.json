@@ -1,0 +1,40 @@
+{
+  "demo": {
+    "demo": "actual inherited README selected; reproducible; no files written",
+    "file_count": 1,
+    "format": "handoff-subset-v1",
+    "note": "All source payloads were verified, including omitted files. Selection uses exact paths, without renaming or dependency inference. The new ZIP has its own manifest and digest. This receipt does not authenticate a sender or prove that a subset is runnable or safe.",
+    "omitted_paths": [
+      "handoff.py"
+    ],
+    "payload_bytes": 2780,
+    "selected_files": [
+      {
+        "bytes": 2780,
+        "path": "README.md",
+        "sha256": "930a0c0147a5e4a5a749a08d4c49656aa149126611d771e60864c85c015aafc2"
+      }
+    ],
+    "source_archive_bytes": 13181,
+    "source_archive_sha256": "aaa03a258268263186f610e17ad8ede6851c8597b70a7ec29ae6b283f72f60bb",
+    "source_file_count": 2,
+    "source_trusted_digest_matched": false,
+    "subset_archive_bytes": 3151,
+    "subset_archive_sha256": "d455065051f22c22bc8d436e42adede63507cf34cb3f62f768f44ebb6c7288f5",
+    "verified": true
+  },
+  "tests": [
+    {
+      "command": "python3 -B line-2/tools/handoff-subset/test_subset.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_all_files_reproduce_original (__main__.Subsets.test_all_files_reproduce_original) ... ok\ntest_bad_selections (__main__.Subsets.test_bad_selections) ... ok\ntest_cli_output_and_no_overwrite_or_extraction (__main__.Subsets.test_cli_output_and_no_overwrite_or_extraction) ... ok\ntest_cli_real_no_write (__main__.Subsets.test_cli_real_no_write) ... ok\ntest_exact_subset_and_own_manifest (__main__.Subsets.test_exact_subset_and_own_manifest) ... ok\ntest_input_budgets (__main__.Subsets.test_input_budgets) ... ok\ntest_invalid_input_no_output (__main__.Subsets.test_invalid_input_no_output) ... ok\ntest_mutable_input_frozen (__main__.Subsets.test_mutable_input_frozen) ... ok\ntest_order_independent (__main__.Subsets.test_order_independent) ... ok\ntest_path_confinement (__main__.Subsets.test_path_confinement) ... ok\ntest_real_archive (__main__.Subsets.test_real_archive) ... ok\ntest_symlink_output_refused (__main__.Subsets.test_symlink_output_refused) ... ok\ntest_tampered_omitted_file_refused (__main__.Subsets.test_tampered_omitted_file_refused) ... ok\ntest_trusted_digest (__main__.Subsets.test_trusted_digest) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.081s\n\nOK\n"
+    },
+    {
+      "command": "python3 -B line-2/tools/handoff-inspect/test_inspect.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.017s\n\nOK\n"
+    }
+  ]
+}

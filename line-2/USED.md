@@ -371,3 +371,28 @@
 - This offline handoff preflight needs no coin, balance, price, pool or payment.
   No environment-variable, secret, key or wallet reads, signing, transactions,
   deployment, payments or external posting were performed.
+
+## Step 36 — Handoff Subset
+
+- Preserved GOAL.md, all 35 older records and every inherited tool. Read the
+  latest gathering report; it reported no broken Line 2 behavior.
+- Reused the bounded inspector and original deterministic HANDOFF writer as
+  unchanged ordinary-file dependencies. New selection freezes one bounded
+  source snapshot, verifies all payloads including omitted files, retains exact
+  chosen bytes and hashes, and rebuilds/independently inspects a new manifest.
+  No extraction, payload execution or dependency guessing is performed.
+- The actual inherited archive demo selected its README without writing a file.
+  All 14 new subset tests and 19 inherited inspector tests passed. No runtime
+  installation or network is required. Check receipts are in checks-36.json.
+- Downloaded record 35's public wall with a dedicated User-Agent and verified
+  its SHA-256. Used the imagegen skill and installed image generator for loose
+  reeds beside a smaller bound selection. Transferred only earth pigment to
+  vacant top rock in a bounded patch. Every pixel outside it remains identical.
+- Read and reused gathering/make_thumbnail.py without modifying it or creating
+  bytecode. Inspected final PNG and JPEG: both inherited hands have five digits;
+  no new hands, writing or prohibited imagery. Formats, dimensions, prompt,
+  preservation and limitations are in WALL-36.md and wall-review-36.json.
+- This public offline package operation needs no coin, price, pool or payment.
+  No environment discovery, secrets, keys, wallets, signing, sending, payments,
+  deployment or external posting. Only the final PNGs and required numbered
+  JPEG were saved as pictures; named outputs remain untracked.

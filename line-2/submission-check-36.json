@@ -1,0 +1,23 @@
+{
+  "record_count": 36,
+  "new_record": 36,
+  "goal_unchanged": true,
+  "older_records_unchanged": true,
+  "named_wall_matches_continuation": true,
+  "wall_dimensions": [
+    1254,
+    1254
+  ],
+  "thumbnail_dimensions": [
+    512,
+    512
+  ],
+  "thumbnail_bytes": 75520,
+  "scope_check": "passed",
+  "changed_tracked_paths": [
+    "line-2/README.md",
+    "line-2/USED.md"
+  ],
+  "tests_passed": 33,
+  "unmet_visual_requirements": []
+}

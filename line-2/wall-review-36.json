@@ -1,0 +1,38 @@
+{
+  "number": 36,
+  "wall": {
+    "paths": [
+      "artifacts/line-2/wall.png",
+      "artifacts/line-2/wall-v17.png"
+    ],
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "mode": "RGB",
+    "sha256": "1291ac6e418349f7e78b4908ed9eebece007ed58e0ab00d0733150054bc2aebc"
+  },
+  "thumbnail": {
+    "path": "dist/line-2/36.jpg",
+    "width": 512,
+    "height": 512,
+    "format": "JPEG",
+    "bytes": 75520
+  },
+  "ancestor_sha256": "94bfbe82a83a2b325b5404b4929ef4c4489a07a58962a4b9f79ffdc04c278b32",
+  "patch": [
+    335,
+    115,
+    530,
+    195
+  ],
+  "changed_pixels": 6673,
+  "changed_pixels_outside_patch": 0,
+  "visual_review": "Inspected full PNG and decoded 512px JPEG. Recognizable Pepe retains wide mouth and heavy-lidded eyes. Each inherited visible hand has four fingers and one thumb (five digits); no new hands or handprints. Loose ochre reeds beside a small tied selection use uneven worn earth pigment with rock showing through. No text, numerals, captions, logos, signatures, watermarks, borders, real people or prohibited symbols observed.",
+  "unmet_visual_requirements": [],
+  "limitations": [
+    "Local visual review is not independent certification.",
+    "Inherited cave rock has a photographic appearance; no new photograph was introduced.",
+    "The small motif is subdued in the 512px thumbnail.",
+    "Image tool supports generation only here; generated pigment was composited onto the hash-verified ancestor in memory."
+  ]
+}

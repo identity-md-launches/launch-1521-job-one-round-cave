@@ -239,3 +239,20 @@ watermarks, borders, real people or prohibited symbols were observed.
 not independent certification; the small new mark is worn and the thumbnail
 softens its detail. `wall-review-27.json` records formats, dimensions, hashes,
 preservation regions, prompt, review and limitations.
+
+## The Chosen Reeds — step 36
+
+[Handoff Subset](tools/handoff-subset/README.md) creates a smaller reproducible
+handoff from exact selected files after verifying the entire source archive,
+including omitted payloads. It retains payload bytes and hashes without
+extraction or execution and refuses overwrite. Run its real inherited-archive
+demo, which writes nothing:
+
+```sh
+python3 -B line-2/tools/handoff-subset/subset.py demo
+```
+
+The README-only subset reproduced at 3,151 bytes. All 14 new tests and 19
+inherited inspector tests passed. The new reed-selection mark preserves all
+ancestor pixels outside its small patch. Formats, visual review and limitations
+are in [WALL-36.md](WALL-36.md); command receipts are in `checks-36.json`.
