@@ -1,0 +1,22 @@
+{
+  "record_count": 36,
+  "new_record": "dist/line-4/36.json",
+  "older_records_unchanged": true,
+  "goal_bytes_unchanged": true,
+  "allowed_paths_only": true,
+  "wall_dimensions": [
+    1254,
+    1254
+  ],
+  "wall_format": "PNG",
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_format": "JPEG",
+  "jpeg_bytes": 77252,
+  "wall_sha256": "6bdb44ce53d0b5be561289d39eaff234b03477557fe96e37fdd05ef07925671f",
+  "wall_alias_bytes_identical": true,
+  "all_tests_passed": 110,
+  "visual_review": "round-36-image-review.json"
+}

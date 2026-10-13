@@ -7,7 +7,9 @@ signs, sends, or serializes a transaction.
 
 import argparse
 import datetime as dt
+import importlib.util
 import json
+from pathlib import Path
 import re
 import sys
 import urllib.error
@@ -28,6 +30,12 @@ MAX_RESPONSE_BYTES = 16 * 1024 * 1024
 MAX_LOGS = 20_000
 READ_METHODS = frozenset({"eth_chainId", "eth_blockNumber", "eth_call", "eth_getLogs", "eth_getBlockByNumber"})
 HEX_QUANTITY = re.compile(r"0x(?:0|[1-9a-fA-F][0-9a-fA-F]{0,63})\Z")
+
+_rpc_spec = importlib.util.spec_from_file_location(
+    'strict_json_for_transfer_window',
+    Path(__file__).resolve().parent.parent / 'strict-rpc-json' / 'strict_rpc.py')
+strict_rpc = importlib.util.module_from_spec(_rpc_spec)
+_rpc_spec.loader.exec_module(strict_rpc)
 
 
 class RpcError(RuntimeError):
@@ -66,18 +74,10 @@ def rpc(endpoint, method, params):
             raw = response.read(MAX_RESPONSE_BYTES + 1)
             if len(raw) > MAX_RESPONSE_BYTES:
                 raise RpcError("RPC response exceeds byte limit; use a smaller window")
-            payload = json.loads(raw.decode("utf-8"))
+            result = strict_rpc.decode_reply(raw, expected_id=1, max_bytes=MAX_RESPONSE_BYTES)
     except (urllib.error.URLError, OSError, ValueError) as exc:
         raise RpcError("network or JSON failure: {}".format(exc)) from exc
-    if not isinstance(payload, dict) or payload.get("jsonrpc") != "2.0":
-        raise RpcError("RPC response is not a JSON-RPC 2.0 object")
-    if type(payload.get("id")) is not int or payload["id"] != 1:
-        raise RpcError("RPC response ID does not match request")
-    if "error" in payload:
-        raise RpcError("RPC error: {}".format(payload["error"]))
-    if "result" not in payload:
-        raise RpcError("RPC response has no result")
-    return payload["result"]
+    return result
 
 
 def parse_block(value):

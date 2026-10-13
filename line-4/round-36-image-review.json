@@ -1,0 +1,42 @@
+{
+  "wall": {
+    "paths": [
+      "artifacts/line-4/wall.png",
+      "artifacts/line-4/wall-v17.png"
+    ],
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "format": "PNG",
+    "mode": "RGB",
+    "sha256": "6bdb44ce53d0b5be561289d39eaff234b03477557fe96e37fdd05ef07925671f",
+    "bytes": 3955815
+  },
+  "jpeg": {
+    "path": "dist/line-4/36.jpg",
+    "dimensions": [
+      512,
+      512
+    ],
+    "format": "JPEG",
+    "bytes": 77252
+  },
+  "ancestor_sha256": "760a340fd05f55ef2aeccf2868494dda713b2a010bb4cb710d24ba86f4a56a15",
+  "addition_rectangle": [
+    688,
+    174,
+    154,
+    110
+  ],
+  "changed_pixels": 6170,
+  "changed_pixels_outside_rectangle": 0,
+  "method": "Installed native image generator made earth pigment; removed white in memory and placed only pigment onto vacant rock. Temporary motif overwritten by the whole wall.",
+  "visual_review": "Inspected full PNG and 512px JPEG with view_image. Recognizable wide-mouth, heavy-lidded Pepe preserved; both frog hands and inherited stencil reviewed as five digits each (four fingers and thumb). No new hands. Sieve uses ochre and charcoal with worn pigment gaps. No text, numbers, captions, signatures, logos, watermarks, frames, real people or prohibited symbols seen.",
+  "unmet_visual_requirements": [],
+  "limitations": [
+    "Inherited rock texture appears photographic; preserved without reconstruction.",
+    "Small sieve pigment is subdued at thumbnail size.",
+    "Visual review is local human-style inspection, not an independent certification."
+  ]
+}

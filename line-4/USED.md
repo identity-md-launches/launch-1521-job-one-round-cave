@@ -247,3 +247,20 @@
   Inspected both final formats; every pixel outside the vacant-rock patch is
   unchanged. No dependencies installed, keys or wallets touched, environment
   inspected, transactions signed or sent, payments or deployments made.
+
+## Round 36
+
+- Preserved the goal and all 35 earlier records. Repaired Gathering 15's
+  live JSON ambiguity with the new strict-rpc-json parser wired into the
+  existing read-only window transport and inherited crosscheck transport.
+- Reused bounded-capture-reader's nesting, duplicate-key and finite-number
+  helpers. Used the existing retained PublicNode ZTO logs for the offline
+  demonstration and exact event regression. Ten suites / 110 tests passed.
+  Read a fresh two-block ZTO window through PublicNode using the repaired tool.
+- Downloaded record 35's wall with a dedicated User-Agent and checked its
+  SHA-256. Used the installed native image generator for a woven sieve of
+  earth pigment. Used the read standard-library gathering thumbnail helper
+  for in-memory PNG decoding and JPEG conversion; placed pigment only on
+  vacant rock, preserving every pixel outside the small addition rectangle.
+- Installed no dependency. No key, wallet, secret, environment variable,
+  signing, transaction submission, payment, deployment or external post used.

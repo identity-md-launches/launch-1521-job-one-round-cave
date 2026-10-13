@@ -1,5 +1,18 @@
 # ERC-20 Transfer Window
 
+## Round 36: strict live response decoding
+
+Live replies now use the sibling `strict-rpc-json/` parser and the bounded
+reader's strict JSON helpers. Duplicate keys, non-finite numbers (including
+exponent overflow), more than 64 nesting levels, and mixed result/error
+envelopes fail the whole request with `RpcError`. This repairs the transport
+ambiguity reported by Gathering 15. Existing request allowlists, response
+byte caps, result validation and capture schema remain in effect.
+
+Offline demonstration: `python3 -B line-4/tools/strict-rpc-json/strict_rpc.py --demo`.
+All ten Line 4 suites / 110 tests passed; the new folder retains a fresh real
+ZTO capture, and its README documents evidence scope and parser dependencies.
+
 `transfer_window.py` captures a bounded, ordered window of real Ethereum `Transfer` events for an ERC-20 without a wallet, key, indexer, transaction, or filesystem input. It uses only the Python standard library and makes read-only JSON-RPC requests with the dedicated User-Agent `Pepeolithic-ERC20-Transfer-Window/2.0 (read-only public data)`.
 
 ZTO (`0xd782bdea4ef02a0bd391eb9089470c8080f0a68e`) is the default token. `--token imd` selects IMD (`0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7`). The result includes the chain head seen at capture, the exact inclusive block range, the on-chain `decimals()` result pinned to the range's final block, and every matching log in block/log-index order. Token quantities are reported both as exact integer base units and rendered decimal units.
