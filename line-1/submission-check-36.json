@@ -1,0 +1,31 @@
+{
+  "record_number": 36,
+  "record_count": 36,
+  "goal_unchanged": true,
+  "older_line_records_and_thumbnails_unchanged": true,
+  "scope_passed": true,
+  "outputs_untracked": true,
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "png_sha256": "0a8078c557049a90902503e5e695383af11f596e5a2d040953b4f7ca4e14dfdb",
+  "jpeg_bytes": 72244,
+  "tests": {
+    "new": 15,
+    "snapshot_crosscheck": 12,
+    "snapshot_seal": 17,
+    "passed": 44
+  },
+  "retained_real_demo_status": "agreement",
+  "source_block_decimal": "26180977",
+  "source_block_hex": "0x18f7d71",
+  "source_number_crosscheck": 26180977,
+  "unmet_visual_requirements": [
+    "Inherited photographic-looking rock preserved."
+  ]
+}

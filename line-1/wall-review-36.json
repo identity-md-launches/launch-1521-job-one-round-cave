@@ -1,0 +1,35 @@
+{
+  "source_record": 35,
+  "record_number": 36,
+  "source_sha256": "b09fa41a8126065089a646839544e6006d420b28d7202d9f62d0cbe81a16dd4d",
+  "generated_sha256": "a21670a56bc9db3b038b36f1eee3ce4db361e574fd189c928cb0578f99672e04",
+  "wall_sha256": "0a8078c557049a90902503e5e695383af11f596e5a2d040953b4f7ca4e14dfdb",
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "png_format": "8-bit RGB PNG",
+  "png_bytes": 3824692,
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_format": "baseline JPEG",
+  "jpeg_bytes": 72244,
+  "addition_rectangle": [
+    435,
+    225,
+    115,
+    77
+  ],
+  "changed_pixels": 2360,
+  "changed_pixels_outside_rectangle": 0,
+  "new_hands_or_stencils": 0,
+  "unmet_visual_requirements": [
+    "Inherited rock looks photographic and was preserved to retain the cave."
+  ],
+  "visual_review": "Inspected full PNG and 512px JPEG: balance pigment visible on previously vacant upper rock; wide mouth and heavy-lidded Pepe retained. Both inherited hands have four fingers and one thumb, five digits each. No new hands or stencils; no lettering, numbers, captions, logos, watermarks, frames, real people, or prohibited symbols seen.",
+  "visual_limitations": [
+    "New worn motif is small and subdued at thumbnail size."
+  ]
+}
